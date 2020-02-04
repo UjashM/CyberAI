@@ -1,0 +1,244 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Primary use:    Common.css file used for styling header, footer and
+                common components across the Cyber-AI webpage
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Layout]
+
+* body
+    + Header / #navbar-header
+    + Landing-Page-Wrapper / .landing-page-image-wrapper
+        -Landing-Page-Image / .landing-page-image
+    + Content / .content-wrapper
+        - Buffer Space/ .buffer 
+        - Side Navigation bar / #navigation-bar
+        - Main Content/ .main-content
+    + Footer / #footer
+        - Address/ address
+        - Footer Navigation/ .footer-navigation
+        - CopyRight Content/ #copyright-content
+-------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* Adding custom fonts: TradeGothicLTStd-BdCn20, News Cycle, Public Sans*/
+
+@font-face {
+    font-family: 'TradeGothicLTStd-BdCn20';
+    src: url('../assets/fonts/TradeGothicLTStd-BdCn20.ttf');
+}
+
+@font-face {
+    font-family: 'News Cycle';
+    src: url('../assets/fonts/news-cycle.regular.ttf');
+}
+
+@font-face {
+    font-family: 'PublicSans';
+    src: url('../assets/fonts/public-sans.regular.ttf');
+}
+
+address, address>a {
+    color: #e4e4e4;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+address>a:hover {
+    color: #e4e4e4;
+    text-decoration: underline;
+}
+
+.buffer {
+    height: 100px;
+    width: 100%;
+}
+
+.content-header {
+    color: #46166C;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.content-wrapper {
+    background: url('../assets/images/bkg-gray-pattern-tile.png');
+    position: relative;
+    top: 90px;
+}
+
+#copyright-content {
+    text-transform: uppercase;
+    color: #9d9d9d;
+    border-top: 1px solid #464646;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: 360px;
+    font-size: 12px;
+    font-family: 'PublicSans', sans-serif;
+}
+
+#copyright-content>p {
+    padding: 0px;
+}
+
+.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#footer {
+    background: #333333 url('../assets/images/mapimg_left.jpg') no-repeat left top;
+    position: relative;
+    top: 90px;
+    padding: 20px;
+    min-height: 360px;
+}
+
+#footer-content {
+    margin-left: 360px;
+    margin-top: 40px;
+    display: flex;
+}
+
+.footer-logo-wrapper {
+    height: 39px;
+    width: 100%;
+}
+
+.footer-logo {
+    max-width: 100%;
+}
+
+.footer-navigation-header {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 24px;
+    padding: 0px;
+    font-family: 'PublicSans', sans-serif;
+}
+
+.footer-navigation {
+    list-style-type: none;
+    font-family: 'PublicSans', sans-serif;
+}
+
+.footer-navigation>li {
+    padding-bottom: 7px;
+}
+
+.footer-navigation>li>a {
+    color: #DDDDDD;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.landing-page-image-wrapper {
+    position: relative;
+    top: 90px;
+}
+
+.landing-page-image {
+    width: 100%;
+}
+
+.main-content {
+    color: #333333;
+    font-size: 18px;
+    font-family: 'News Cycle', Helvetica, Arial, sans-serif;
+    line-height: 24px;
+    padding-bottom: 30px;
+}
+
+#navigation-bar {
+    list-style-type: none;
+    padding-bottom: 30px;
+}
+
+#navbar-header {
+    background-color: #46166b;
+    height: 90px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.navigation-items {
+    border-bottom: 2px solid #909090;
+    color: #46166B;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+}
+
+.ualbany-logo-wrapper {
+    height: 90px;
+    width: 100%;
+}
+
+.ualbany-logo {
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-content {
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #navigation-bar {
+        margin-left: 50px;
+    }
+    .main-content>h1, h2, h3, h4, h5, h6, p {
+        padding-left: 50px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #navigation-bar {
+        margin-left: 75px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #navigation-bar {
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 985px) {
+    #footer {
+        background: #333333 url('../assets/images/mapimg.jpg') no-repeat center top;
+    }
+    #footer-content {
+        margin-top: 334px;
+        margin-left: 0px;
+    }
+    #copyright-content {
+        margin-left: 0px;
+    }
+}
