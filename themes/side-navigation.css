@@ -49,6 +49,7 @@ Primary use:    side-navigation.css file used for styling components
     color: inherit;
     padding-left: 10px;
     text-decoration: none;
+    display: block;
 }
 
 #navigation-bar {
