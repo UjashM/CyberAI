@@ -1,0 +1,26 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Primary use:    faculty-and-researchers.css file used for styling faculty
+                and researchers page
+-------------------------------------------------------------------*/
+.faculty-info{
+    margin-left: 50px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+.faculty-image{
+    width: 200px;
+    float: right;
+    margin-left: 20px;
+
+}
+
+.faculty-link{
+    color: inherit;
+}
+
+.faculty-link:hover{
+    color: inherit;
+}
