@@ -16,11 +16,3 @@ Primary use:    faculty-and-researchers.css file used for styling faculty
     margin-left: 20px;
 
 }
-
-.faculty-link{
-    color: inherit;
-}
-
-.faculty-link:hover{
-    color: inherit;
-}

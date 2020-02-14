@@ -99,6 +99,10 @@ Primary use:    Common.css file used for styling header, footer and
     color: inherit;
 }
 
+.no-link-decoration:hover{
+    color: inherit;
+}
+
 .main-content {
     color: #333333;
     font-size: 18px;
@@ -166,7 +170,7 @@ Primary use:    Common.css file used for styling header, footer and
 }
 
 @media only screen and (min-width: 768px) {
-    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p {
+    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
         padding-left: 50px;
     }
     .main-content>ul, .main-content>ol {
