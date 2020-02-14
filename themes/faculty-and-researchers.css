@@ -5,14 +5,28 @@ Primary use:    faculty-and-researchers.css file used for styling faculty
                 and researchers page
 -------------------------------------------------------------------*/
 .faculty-info{
-    margin-left: 50px;
-    margin-right: 100px;
-    margin-bottom: 50px;
+    margin-right: 20%;
+    margin-bottom: 40px;
 }
 
 .faculty-image{
     width: 200px;
-    float: right;
-    margin-left: 20px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
 
+@media screen and (max-width: 1192px)
+{
+    .faculty-info{
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 992px)
+{
+    .faculty-image{
+        margin-right: 20px;
+        border-radius: 50%;
+    }
 }
