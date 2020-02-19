@@ -1,0 +1,36 @@
+/*------------------------------------------------------------------
+Primary use:    academic-programs.css file used for styling content
+                inside Academic programs page
+-------------------------------------------------------------------*/
+
+button.btn-link, button.btn-link > .content-header-no-margin{
+    color: white;
+    background-color: #46166C;
+    margin-bottom: 0px;
+}
+
+button.btn-link{
+    width: 100%;
+    padding: 10px;
+    border-radius: 1%;
+    text-align: left;
+}
+
+button.btn-link:hover, button.btn-link > .content-header-no-margin:hover{
+    color: inherit;
+}
+
+.card{
+    background-color: transparent;
+}
+
+.card-header{
+    color: #46166C;
+    padding: 0px;
+    border-radius: 1%;
+}
+
+.card-header:hover{
+    color: white;
+    background-color: #46166C;
+}
