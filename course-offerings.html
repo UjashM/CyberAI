@@ -10,12 +10,10 @@
     <link rel="stylesheet" href="themes/side-navigation.css" />
     <link rel="stylesheet" href="themes/custom-fonts.css" />
     <link rel="stylesheet" href="themes/footer.css" />
+    <link rel="stylesheet" href= "themes/course-offerings.css" />
     <link rel="stylesheet" href="themes/bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="themes/bootstrap/css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="themes/bootstrap/css/bootstrap.min.css" />
-    <script src= "libraries/jquery/jquery-3.3.1.slim.js" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" async></script>
-    <script src="libraries/bootstrap/js/bootstrap.min.js" async></script>
     <title>
         Course Offerings | University at Albany
     </title>
@@ -60,24 +58,21 @@
                 <h1 class = "content-header">
                     Course Offerings
                 </h1>
-                <div class = "course-container">
-                <p>
-                   <strong>B FOR 100 Introduction to Information Systems (3 credits)</strong>
-                   <br>
-                   <strong>Department: </strong>Digital Forensics
-                   <br>
-                   <strong>School: </strong>School of Business
-                   <br>
-                   <strong>Degree: </strong>B.S. in Digital Forensics
-                   <br>
-                   This course provides a foundation of information systems concepts that can be 
-                   applied to future learning in advanced topics. The course will include background 
-                   in the history and social implications of computing including cyber ethics; emergent 
-                   and contemporary information technology and its nomenclature; information and data 
-                   abstraction, representation, manipulation and storage; operating systems; networking 
-                   and the Internet, programming languages, logic, and algorithms; database systems; digital graphics and multimedia; and information security.
-                </p>
-                </div>
+                <template id= "course-template">
+                 <div class = "course-container">   
+                    <strong><span class = "course-code"></span> &nbsp; &nbsp;<span class = "course-title"></span>
+                    <span class = "credits"></span></strong>
+                    <span class = "credits"></span>
+                    <br>
+                    <span><strong>Department: </strong></span><span class = "department"></span>
+                    <br>
+                    <span><strong>School: </strong></span><span class = "school"></span>
+                    <br>
+                    <span><strong>Degree: </strong></span><span class = "degree"></span>
+                    <br>
+                    <p class= "description"></p>
+                 </div>
+                </template>
             </div>
         </div>
         </div>
@@ -147,6 +142,10 @@
             <p>© 2019&nbsp;University at Albany</p>
         </section>
     </footer>
+    <script src = "js/course-generator.js" async></script>
+    <script src= "libraries/jquery/jquery-3.3.1.slim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
