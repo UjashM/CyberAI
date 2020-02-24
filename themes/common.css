@@ -199,7 +199,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     .main-content> #search-box{       
         margin-bottom: 5px;
-        width: 50%;
+        width: 60%;
     }
     
     .main-content>#search-box-results{
@@ -216,10 +216,17 @@ Primary use:    Common.css file used for styling header, footer and
     }
     .main-content> #search-box{       
         margin: 0px 0px 5px 50px;
-        width: 260px;
+        width: 255px;
     }
     
     .main-content>#search-box-results{
         margin: 0px 0px 20px 50px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .main-content> #search-box{       
+        width: 510px;
     }
 }
