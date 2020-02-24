@@ -16,6 +16,7 @@ if(false || !!document.documentMode)
             //code for IE
             let courseContainerElement = document.createElement("div");
             courseContainerElement.classList.add('course-container');
+            courseContainerElement.classList.add('search-container');
             let courseCodeElement = document.createElement("span");
             courseCodeElement.appendChild(document.createTextNode(coursearray[i][0]));
             courseCodeElement.appendChild(document.createTextNode(' '));
@@ -63,6 +64,7 @@ if(false || !!document.documentMode)
                     +'</p>';
             let courseElement = document.createElement('div');
             courseElement.classList.add('course-container');
+            courseElement.classList.add('search-container');
             courseElement.innerHTML = coursetemplate.trim();
             maincontentContainer.appendChild(courseElement); 
             }

@@ -136,6 +136,29 @@ Primary use:    Common.css file used for styling header, footer and
     margin-bottom: 0px;
 }
 
+.main-content> #search-box{
+    background-color: #F9F9F9;
+    height: 40px;
+    border: 1px solid #B9B9B9;
+    border-radius: 1%;
+    font-size: 20px;
+    padding: 5px 0px 10px 2px;
+}
+
+.main-content>#search-box-results{
+    display: block;
+}
+
+#search-button{
+    height: 40px;
+    width: 40px;
+    background-color: #46166b;
+    color: white;
+    position: relative;
+    top: 1px;
+    left: -1px;
+}
+
 .ualbany-logo-wrapper {
     height: 90px;
     width: 100%;
@@ -161,11 +184,26 @@ Primary use:    Common.css file used for styling header, footer and
     .main-content>ul, .main-content>ol {
         padding-left: 20px;
     }
+    .main-content> #search-box{       
+        margin-bottom: 5px;
+        width: 80%;
+    }   
+    .main-content>#search-box-results{
+        margin-bottom: 30px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
     .main-content>ul, .main-content>ol {
         padding-left: 20px;
+    }
+    .main-content> #search-box{       
+        margin-bottom: 5px;
+        width: 50%;
+    }
+    
+    .main-content>#search-box-results{
+        margin-bottom: 30px;
     }
 }
 
@@ -175,5 +213,13 @@ Primary use:    Common.css file used for styling header, footer and
     }
     .main-content>ul, .main-content>ol {
         padding-left: 70px;
+    }
+    .main-content> #search-box{       
+        margin: 0px 0px 5px 50px;
+        width: 260px;
+    }
+    
+    .main-content>#search-box-results{
+        margin: 0px 0px 20px 50px;
     }
 }
