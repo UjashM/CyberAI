@@ -49,12 +49,11 @@ if(false || !!document.documentMode)
             for(let i = 0; i < courses.length; i++)
             {
             let courseCode =  courses[i][0] + ' '+ courses[i][1];
-            //console.log(courseCode);
             let courseTitle = courses[i][2];
-            let courseCredits = '('+ courses[i][3]+ ' credits)';
-            let description = courses[i][4];
-            let department = courses[i][6];
-            let school = courses[i][5];
+            let courseCredits = (null == courses[i][3])? '' : ' ('+ courses[i][3]+ ' credits)';
+            let description = (null == courses[i][4])? '': courses[i][4];
+            let department = (null == courses[i][6])? 'N/A' : courses[i][6];
+            let school = (null == courses[i][5])? 'N/A': courses[i][5];
             let degree = courses[i][7];     
             let coursetemplate =    
                     '<strong><span class = "course-code">' + courseCode + '</span> &nbsp; &nbsp;<span class = "course-title">' + courseTitle+ '</span>'+
