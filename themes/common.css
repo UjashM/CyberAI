@@ -82,8 +82,11 @@ Primary use:    Common.css file used for styling header, footer and
 }
 
 .landing-page-image-wrapper {
+    background-size: contain;
     position: relative;
     top: 90px;
+    height: 70%;
+    width: 100%;
 }
 
 .landing-page-image {
@@ -178,6 +181,10 @@ Primary use:    Common.css file used for styling header, footer and
 }
 
 @media only screen and (max-width: 600px) {
+    .landing-page-image-wrapper {
+        background-image: url('../assets/images/cyber-ai-background-xs.png');
+        height: 78vw;
+    }
     .main-content {
         padding-top: 20px;
     }
@@ -194,6 +201,10 @@ Primary use:    Common.css file used for styling header, footer and
 }
 
 @media only screen and (min-width: 600px) {
+    .landing-page-image-wrapper {
+        background-image: url('../assets/images/cyber-ai-background-sm.png');
+        height: 64.7vw;
+    }
     .main-content>ul, .main-content>ol {
         padding-left: 20px;
     }
@@ -208,6 +219,10 @@ Primary use:    Common.css file used for styling header, footer and
 }
 
 @media only screen and (min-width: 768px) {
+    .landing-page-image-wrapper {
+        background-image: url('../assets/images/cyber-ai-background-md.png');
+        height: 48.5vw;
+    }
     .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
         padding-left: 50px;
     }
@@ -218,7 +233,6 @@ Primary use:    Common.css file used for styling header, footer and
         margin: 0px 0px 5px 50px;
         width: 255px;
     }
-    
     .main-content>#search-box-results{
         margin: 0px 0px 20px 50px;
     }
@@ -228,5 +242,17 @@ Primary use:    Common.css file used for styling header, footer and
 
     .main-content> #search-box{       
         width: 510px;
+    }
+    
+    .landing-page-image-wrapper {
+        background-image: url('../assets/images/cyber-ai-background-lg.png');
+        height: 41.5vw;
+    }
+}
+
+@media only screen and (min-width: 1192px) {
+    .landing-page-image-wrapper {
+        background-image: url('../assets/images/cyber-ai-background-xl.png');
+        height: 30vw;
     }
 }
