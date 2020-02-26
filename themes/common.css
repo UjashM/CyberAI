@@ -128,19 +128,19 @@ Primary use:    Common.css file used for styling header, footer and
     font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
     text-shadow: 3px 1px 2px black;
     left: 5%;
-    padding: 0px 20px;
+    padding: 10px;
     position: absolute;
 }
 
 #landing-page-text-wrapper>h1
 {
     color: white;
+    text-transform: uppercase;
 }
 
 #landing-page-text-wrapper>p
 {
     color: #eeb211;
-    font-size: 20px;
 }
 
 .list-lower-alpha {
@@ -237,12 +237,16 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {   
-        top: 38%;
-        width: 65%;
+        top: 33%;
+        width: 68%;
     }
     #landing-page-text-wrapper>h1
     {
         font-size: 6vw;
+    }
+    #landing-page-text-wrapper>p
+    {
+        font-size: 2.8vw;
     }
     .main-content>ul, .main-content>ol {
         padding-left: 20px;
@@ -264,12 +268,16 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {
-        top: 50%;
-        width: 70%;
+        top: 48%;
+        width: 73%;
     }
     #landing-page-text-wrapper>h1
     {
         font-size: 5vw;
+    }
+    #landing-page-text-wrapper>p
+    {
+        font-size: 2.3vw;
     }
     .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
         padding-left: 50px;
@@ -299,11 +307,15 @@ Primary use:    Common.css file used for styling header, footer and
     #landing-page-text-wrapper
     {
         top: 50%;
-        width: 50%;
+        width: 55%;
     }
     #landing-page-text-wrapper>h1
     {
         font-size: 3.75vw;
+    }
+    #landing-page-text-wrapper>p
+    {
+        font-size: 1.9vw;
     }
 }
 
@@ -314,11 +326,15 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {
-        top: 45%;
-        width: 45%;
+        top: 42%;
+        width: 50%;
     }
     #landing-page-text-wrapper>h1
     {
         font-size: 3.5vw;
+    }
+    #landing-page-text-wrapper>p
+    {
+        font-size: 1.75vw;
     }
 }
