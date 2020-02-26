@@ -89,10 +89,6 @@ Primary use:    Common.css file used for styling header, footer and
     width: 100%;
 }
 
-.landing-page-image {
-    width: 100%;
-}
-
 .learn-more-text {
     text-decoration: underline;
 }
@@ -124,6 +120,27 @@ Primary use:    Common.css file used for styling header, footer and
 
 .sub-list {
     padding-left: 20px;
+}
+
+#landing-page-text-wrapper
+{
+    background-color: rgb(0, 0, 0, 0.5);
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    text-shadow: 3px 1px 2px black;
+    left: 5%;
+    padding: 0px 20px;
+    position: absolute;
+}
+
+#landing-page-text-wrapper>h1
+{
+    color: white;
+}
+
+#landing-page-text-wrapper>p
+{
+    color: #eeb211;
+    font-size: 20px;
 }
 
 .list-lower-alpha {
@@ -174,16 +191,29 @@ Primary use:    Common.css file used for styling header, footer and
 
 @media only screen and (max-width: 340px)
 {
-.ualbany-logo{
-    margin-left: 5%;
-    width: 90%;
-}
+    .ualbany-logo{
+        margin-left: 5%;
+        width: 90%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .landing-page-image-wrapper {
         background-image: url('../assets/images/cyber-ai-background-xs.png');
         height: 78vw;
+    }
+    #landing-page-text-wrapper
+    {   
+        top: 50%;
+        width: 55%;
+    }
+    #landing-page-text-wrapper>h1
+    {
+        font-size: 6vw;
+    }
+    #landing-page-text-wrapper>p
+    {
+        display: none;
     }
     .main-content {
         padding-top: 20px;
@@ -205,6 +235,15 @@ Primary use:    Common.css file used for styling header, footer and
         background-image: url('../assets/images/cyber-ai-background-sm.png');
         height: 64.7vw;
     }
+    #landing-page-text-wrapper
+    {   
+        top: 38%;
+        width: 65%;
+    }
+    #landing-page-text-wrapper>h1
+    {
+        font-size: 6vw;
+    }
     .main-content>ul, .main-content>ol {
         padding-left: 20px;
     }
@@ -222,6 +261,15 @@ Primary use:    Common.css file used for styling header, footer and
     .landing-page-image-wrapper {
         background-image: url('../assets/images/cyber-ai-background-md.png');
         height: 48.5vw;
+    }
+    #landing-page-text-wrapper
+    {
+        top: 50%;
+        width: 70%;
+    }
+    #landing-page-text-wrapper>h1
+    {
+        font-size: 5vw;
     }
     .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
         padding-left: 50px;
@@ -248,11 +296,29 @@ Primary use:    Common.css file used for styling header, footer and
         background-image: url('../assets/images/cyber-ai-background-lg.png');
         height: 41.5vw;
     }
+    #landing-page-text-wrapper
+    {
+        top: 50%;
+        width: 50%;
+    }
+    #landing-page-text-wrapper>h1
+    {
+        font-size: 3.75vw;
+    }
 }
 
 @media only screen and (min-width: 1192px) {
     .landing-page-image-wrapper {
         background-image: url('../assets/images/cyber-ai-background-xl.png');
         height: 30vw;
+    }
+    #landing-page-text-wrapper
+    {
+        top: 45%;
+        width: 45%;
+    }
+    #landing-page-text-wrapper>h1
+    {
+        font-size: 3.5vw;
     }
 }
