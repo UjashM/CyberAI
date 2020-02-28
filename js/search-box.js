@@ -1,7 +1,9 @@
+//getting search-box
 let searchbox = document.getElementById('search-box');
 let searchbutton = document.getElementById('search-button');
 searchfunction = function()
 {
+    //extracting search-text and trimming text to ignore additional-spaces
 	let searchtext = searchbox.value.trim();
     let modifiedsearchtext = searchtext.replace(/\s+/g, '').toLowerCase();
     let searchElems = document.getElementsByClassName('search-container');
@@ -10,7 +12,7 @@ searchfunction = function()
 	    let matchcount = 0;
 	    for(let i = 0; i< searchElems.length; i++)
         {
-            if(searchElems[i].innerText.replace(/\s+/g, '').toLowerCase().indexOf(modifiedsearchtext) >= 0)
+            if(searchElems[i].textContent.replace(/\s+/g, '').toLowerCase().indexOf(modifiedsearchtext) >= 0)
             {
 		        searchElems[i].style.display = "block";
                 matchcount = matchcount + 1;
