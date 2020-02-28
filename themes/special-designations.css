@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-Primary use:    welcome.css file used for styling components
+Primary use:    special-designations.css file used for styling components
                 on welcome page
 -------------------------------------------------------------------*/
 
@@ -8,33 +8,16 @@ Primary use:    welcome.css file used for styling components
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
-Primary use:    side-navigation.css file used for styling components
+Primary use:    special-designations.css file used for styling components
                 inside side-navigation bar
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
 [Layout]
 -------------------------------------------------------------------*/
-
-.welcome-images{
-    float: right;
-    padding-right: 30px;
+@media only screen and (min-width: 768px){
+.main-content > img{
+    padding-left: 50px;
+    padding-bottom: 10px;
 }
-
-.welcome-images> img{
-    padding-left: 20px;
-}
-
-@media only screen and (max-width: 991px)
-{
-    .welcome-images{
-        float: left;
-        padding-right: 30px;
-        padding-left: 0px;
-    }
-    .welcome-images> img{
-        padding-left: 0px;
-        padding-right: 2%;
-        padding-bottom: 10px;
-    }  
 }
