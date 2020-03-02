@@ -1,16 +1,16 @@
-let requestURL = "data/courses.json";
+let requestURL = "data/faculties.json";
 let request = new XMLHttpRequest();
 let maincontentContainer = document.getElementsByClassName('main-content')[0];
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 request.onload = function(){
-const courses = request.response;  
-//console.log(courses);
+const faculties = request.response;  
+console.log(faculties);
     
 if(false || !!document.documentMode)
 {
-    let coursearray = JSON.parse(courses);
+    /*let coursearray = JSON.parse(courses);
     for(let i = 0; i < coursearray.length; i++)
     {
             //code for IE
@@ -39,67 +39,75 @@ if(false || !!document.documentMode)
             descriptionElement = document.createTextNode(coursearray[i].description);
             courseContainerElement.appendChild(descriptionElement);
             maincontentContainer.appendChild(courseContainerElement);
-    }           
+    }*/           
 }
 
         else
         {   
             let content = '';
-            //Department-counter for unique id generation
-            let deptcounter = 1;
-            //finding list of distinct departments
-            courseDepartments = courses.map(function(course){ 
-                return course.department});
-            distinctDepartments = courseDepartments.filter(function(v, i, a){
+            //School-counter for unique id generation
+            let schoolcounter = 1;
+            //finding list of distinct schools
+            schools = faculties.map(function(faculty){ 
+                return faculty.school});
+            distinctSchools = schools.filter(function(v, i, a){
                 return a.indexOf(v) === i;
              });
             
-            distinctDepartments.sort();
-            //Iterating over list of departments
-            distinctDepartments.forEach(function(department){
+            distinctSchools.sort();
+            //Iterating over list of schools
+            distinctSchools.forEach(function(school){
 
-                departmentCourses = courses.filter(function(course){ 	
-                    return course.department == department
+                schoolFaculties = faculties.filter(function(faculty){ 	
+                    return faculty.school == school
                 });
-                //getting list of distint degrees within department
-                departmentDegrees = departmentCourses.map(function(course){ 
-                    return course.degree});
+                //getting list of distint department within school
+                schoolDepartments = schoolFaculties.map(function(faculty){ 
+                    return faculty.department});
                 
-                degrees = departmentDegrees.filter(function(v, i, a){
+                departments = schoolDepartments.filter(function(v, i, a){
                         return a.indexOf(v) === i;  
                 });
-                degrees.sort();
+                departments.sort();
                 let accordioncontent = '';
                 //iterating over list of degrees to generate sub-accordion
-                degrees.forEach(function(degree){
+                departments.forEach(function(department){
                     //finding list of courses relevant to degree and department
-                    degreeCourses = departmentCourses.filter(function(course){ 	
-                        return course.degree == degree
+                    departmentFaculties = schoolFaculties.filter(function(faculty){ 	
+                        return faculty.department == department;
+                    });
+                    departmentFaculties.sort(function(a, b){
+                        if(a.fullName > b.fullName)
+                            return 1;
+                        
+                        else
+                            return -1;
+
+                    });
+                    let departmentFacultyContent = '';
+                    //Generating faculty-info for specific department
+                    departmentFaculties.forEach(function(faculty){
+
+                        let fulldepartment = (department != 'Other Department')? department + ', ' + school : school;
+                        departmentFacultyContent = departmentFacultyContent +  '<div class = "faculty-info"><img class = "faculty-image" src = ""/> <h2 class = "content-header-no-margin">' +
+                        '<a class = "no-link-decoration" href = ' + faculty.facultyLink + '>' + faculty.fullName + '</a></h2><h5 class = "content-header faculty-title">'+ faculty.title + ',<br>'+
+                        fulldepartment + '</h5><p class = "faculty-description"><strong>Research Interests: </strong>'+ faculty.researchInterest + '<br><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
+                        '>'+ faculty.email+ '</a><br><strong>Phone: </strong>'+ faculty.contact + '</p></div>'; 
                     });
 
-                    let degreeCoursecontent = '';
-                    //Generating course-content for specific degree
-                    degreeCourses.forEach(function(course){
-                        degreeCoursecontent = degreeCoursecontent +  '<div class = "course-container"><strong><span class = "course-code">' + course.courseCode + '</span> &nbsp; &nbsp;<span class = "course-title">' + course.title + '</span>'+
-                        '<span class = "credits">'+ course.courseCredits + '</span></strong>' +
-                        '<br><span><strong>Department: </strong></span><span class = "department">' + course.department + '</span><br><span><strong>School: </strong></span><span class = "school">'
-                        + course.school + '</span><br><span><strong>Degree: </strong></span><span class = "degree">' + course.degree + '</span><br><p class= "description">' + course.description
-                        +'</p></div>'; 
-                    });
-
-                    accordioncontent += '<div class = "accordion-container"><div class = "accordion-header"><h3 class = "content-header-no-margin">'+ degree + '</h3></div><div class = "accordion-content">'+ degreeCoursecontent +'</div></div>';
+                    accordioncontent += '<div class = "accordion-container"><div class = "accordion-header"><h3 class = "content-header-no-margin">'+ department + '</h3></div><div class = "accordion-content">'+ departmentFacultyContent +'</div></div>';
                 });
 
                 //generating Id for bootstrap accordion
-                let deptId = "collapse" + deptcounter;
-                let headingId = "heading" + deptcounter;
+                let schoolId = "collapse" + schoolcounter;
+                let headingId = "heading" + schoolcounter;
                 let accordionElem =  '<div class = "card"><div class="card-header" id="'+ headingId + '">' +
-                          '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#'+ deptId + '" aria-expanded="true" aria-controls="' + deptId + '">'+
-                            '<h2 class = "content-header-no-margin">' + department + '</h2></button></div>'
-                        + '<div id="'+ deptId + '" class = "collapse show" aria-labelledby= "'+ headingId + '"data-parent=""> <div class = "card-body">'
+                          '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#'+ schoolId + '" aria-expanded="true" aria-controls="' + schoolId + '">'+
+                            '<h2 class = "content-header-no-margin">' + school + '</h2></button></div>'
+                        + '<div id="'+ schoolId + '" class = "collapse show" aria-labelledby= "'+ headingId + '"data-parent=""> <div class = "card-body">'
                         + accordioncontent +'</div></div></div>';  
                 content = content + accordionElem;
-                deptcounter++;
+                schoolcounter++;
             });
             //Appending content to DOM
             let accordionElement = document.createElement('div');
