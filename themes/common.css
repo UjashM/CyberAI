@@ -147,8 +147,16 @@ Primary use:    Common.css file used for styling header, footer and
     list-style-type: lower-alpha;
 }
 
+.list-more-indentation > li {
+    padding-left: 5px;
+}
+
 .list-lower-roman {
     list-style-type: lower-roman;
+}
+
+.purple-font{
+    color: #46166C;
 }
 
 .list-preceding-paragraph, 
