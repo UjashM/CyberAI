@@ -291,7 +291,7 @@ Primary use:    Common.css file used for styling header, footer and
         padding-left: 50px;
     }
     .main-content>ul, .main-content>ol {
-        padding-left: 70px;
+        padding-left: 90px;
     }
     .main-content> #search-box{       
         margin: 0px 0px 5px 50px;
