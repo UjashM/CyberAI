@@ -77,7 +77,7 @@ if(false || !!document.documentMode)
                         return faculty.department == department;
                     });
                     departmentFaculties.sort(function(a, b){
-                        if(a.fullName > b.fullName)
+                        if(a.lastName > b.lastName)
                             return 1;
                         
                         else
