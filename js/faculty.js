@@ -89,7 +89,7 @@ if(false || !!document.documentMode)
                     departmentFaculties.forEach(function(faculty){
 
                         let fulldepartment = (department != 'Other Department')? department + ', ' + school : school;
-                        departmentFacultyContent = departmentFacultyContent +  '<div class = "faculty-info"><img class = "faculty-image" src = ""/> <h2 class = "content-header-no-margin">' +
+                        departmentFacultyContent = departmentFacultyContent +  '<div class = "search-container faculty-info"><img class = "faculty-image" src = ""/> <h2 class = "content-header-no-margin">' +
                         '<a class = "no-link-decoration" href = ' + faculty.facultyLink + '>' + faculty.fullName + '</a></h2><h5 class = "content-header faculty-title">'+ faculty.title + ',<br>'+
                         fulldepartment + '</h5><p class = "faculty-description"><strong>Research Interests: </strong>'+ faculty.researchInterest + '<br><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
                         '>'+ faculty.email+ '</a><br><strong>Phone: </strong>'+ faculty.contact + '</p></div>'; 
@@ -104,7 +104,7 @@ if(false || !!document.documentMode)
                 let accordionElem =  '<div class = "card"><div class="card-header" id="'+ headingId + '">' +
                           '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#'+ schoolId + '" aria-expanded="true" aria-controls="' + schoolId + '">'+
                             '<h2 class = "content-header-no-margin">' + school + '</h2></button></div>'
-                        + '<div id="'+ schoolId + '" class = "collapse show" aria-labelledby= "'+ headingId + '"data-parent=""> <div class = "card-body">'
+                        + '<div id="'+ schoolId + '" class = "collapse" aria-labelledby= "'+ headingId + '"data-parent=""> <div class = "card-body">'
                         + accordioncontent +'</div></div></div>';  
                 content = content + accordionElem;
                 schoolcounter++;
