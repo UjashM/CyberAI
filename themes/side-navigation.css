@@ -32,7 +32,7 @@ Primary use:    side-navigation.css file used for styling components
     font-size: 20px;
     font-weight: 400;
     list-style-type: none;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 10px 10px 0px;
 }
 
 #expanded-navigation-item {
@@ -64,18 +64,18 @@ Primary use:    side-navigation.css file used for styling components
 .first-sub-navigation-item {
     color: #46166B;
     margin-top: 10px;
-    padding: 10px 0 10px 30px;
+    padding: 10px 10px 10px 30px;
     border-top: 2px solid #909090;
 }
 
 .last-sub-navigation-item {
     color: #46166B;
-    padding: 10px 0 10px 30px;
+    padding: 10px 10px 10px 30px;
     border-top: 2px solid #909090;
 }
 
 .sub-navigation-items {
-    padding: 10px 0 10px 30px;
+    padding: 10px 10px 10px 30px;
     border-top: 2px solid #909090;
 }
 

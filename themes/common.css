@@ -102,6 +102,7 @@ Primary use:    Common.css file used for styling header, footer and
 .no-link-decoration {
     text-decoration: none;
     color: inherit;
+    font-weight: bold;
 }
 
 .no-link-decoration:hover{
