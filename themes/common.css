@@ -44,6 +44,12 @@ Primary use:    Common.css file used for styling header, footer and
     text-transform: uppercase;
 }
 
+.black-content-header-less-margin {
+    color: #555;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
 .grey-content-header-less-margin {
     color: #777;
     font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
@@ -287,7 +293,7 @@ Primary use:    Common.css file used for styling header, footer and
     {
         font-size: 2.3vw;
     }
-    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
+    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div,section {
         padding-left: 50px;
     }
     .main-content>ul, .main-content>ol {
