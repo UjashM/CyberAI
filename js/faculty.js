@@ -6,7 +6,6 @@ request.responseType = 'json';
 request.send();
 request.onload = function(){
 const faculties = request.response;  
-console.log(faculties);
     
 if(false || !!document.documentMode)
 {
@@ -95,10 +94,10 @@ if(false || !!document.documentMode)
 
                         let fulldepartment = (department != 'Other Department')? department + ', ' + school : school;
                         let institution = (faculty.facultyType == 'researcher')? faculty.department : fulldepartment;
-                        departmentFacultyContent = departmentFacultyContent +  '<div class = "search-container faculty-info"><img class = "faculty-image" src = ""/> <h2 class = "content-header-no-margin">' +
+                        departmentFacultyContent = departmentFacultyContent +  '<div class = "search-container faculty-info"><img class = "faculty-image" src = "'+ faculty.photo+'"/> <h2 class = "content-header-no-margin">' +
                         '<a class = "no-link-decoration" href = ' + faculty.facultyLink + '>' + faculty.fullName + '</a></h2><h5 class = "content-header faculty-title">'+ faculty.title + ',<br>'+
-                        institution + '</h5><p class = "faculty-description"><strong>Research Interests: </strong>'+ faculty.researchInterest + '<br><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
-                        '>'+ faculty.email+ '</a><br><strong>Phone: </strong>'+ faculty.contact + '</p></div>'; 
+                        institution + '</h5><p class = "faculty-description"><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
+                        '>'+ faculty.email+ '</a><br><strong>Phone: </strong>'+ faculty.contact + '<br><strong>Research Interests: </strong>'+ faculty.researchInterest + '</p></div>'; 
                     });
 
                     accordioncontent += '<div class = "accordion-container"><div class = "accordion-header"><h3 class = "content-header-no-margin">'+ department + '</h3></div><div class = "accordion-content">'+ departmentFacultyContent +'</div></div>';
