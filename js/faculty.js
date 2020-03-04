@@ -55,6 +55,11 @@ if(false || !!document.documentMode)
              });
             
             distinctSchools.sort();
+            let rindex = distinctSchools.indexOf('Research Centers');
+            let rlength = distinctSchools.length - 1;
+            let swap = distinctSchools[rindex];
+            distinctSchools[rindex] = distinctSchools[rlength];
+            distinctSchools[rlength] = swap;
             //Iterating over list of schools
             distinctSchools.forEach(function(school){
 
@@ -89,9 +94,10 @@ if(false || !!document.documentMode)
                     departmentFaculties.forEach(function(faculty){
 
                         let fulldepartment = (department != 'Other Department')? department + ', ' + school : school;
+                        let institution = (faculty.facultyType == 'researcher')? faculty.department : fulldepartment;
                         departmentFacultyContent = departmentFacultyContent +  '<div class = "search-container faculty-info"><img class = "faculty-image" src = ""/> <h2 class = "content-header-no-margin">' +
                         '<a class = "no-link-decoration" href = ' + faculty.facultyLink + '>' + faculty.fullName + '</a></h2><h5 class = "content-header faculty-title">'+ faculty.title + ',<br>'+
-                        fulldepartment + '</h5><p class = "faculty-description"><strong>Research Interests: </strong>'+ faculty.researchInterest + '<br><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
+                        institution + '</h5><p class = "faculty-description"><strong>Research Interests: </strong>'+ faculty.researchInterest + '<br><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
                         '>'+ faculty.email+ '</a><br><strong>Phone: </strong>'+ faculty.contact + '</p></div>'; 
                     });
 
