@@ -219,7 +219,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {   
-        top: 50%;
+        top: 47%;
         width: 55%;
     }
     #landing-page-text-wrapper>h1
@@ -252,8 +252,8 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {   
-        top: 33%;
-        width: 68%;
+        top: 42%;
+        width: 66%;
     }
     #landing-page-text-wrapper>h1
     {
@@ -261,7 +261,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper>p
     {
-        font-size: 2.8vw;
+        display: none;
     }
     .main-content>ul, .main-content>ol {
         padding-left: 20px;
@@ -284,15 +284,15 @@ Primary use:    Common.css file used for styling header, footer and
     #landing-page-text-wrapper
     {
         top: 48%;
-        width: 73%;
+        width: 61%;
     }
     #landing-page-text-wrapper>h1
     {
-        font-size: 5vw;
+        font-size: 4.6vw;
     }
     #landing-page-text-wrapper>p
     {
-        font-size: 2.3vw;
+        display: none;
     }
     .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div,section {
         padding-left: 50px;
@@ -321,8 +321,8 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {
-        top: 50%;
-        width: 55%;
+        top: 41%;
+        width: 61%;
     }
     #landing-page-text-wrapper>h1
     {
@@ -330,6 +330,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper>p
     {
+        display: block;
         font-size: 1.9vw;
     }
 }
@@ -341,12 +342,12 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {
-        top: 42%;
-        width: 50%;
+        top: 38%;
+        width: 62%;
     }
     #landing-page-text-wrapper>h1
     {
-        font-size: 3.5vw;
+        font-size: 3.2vw;
     }
     #landing-page-text-wrapper>p
     {
