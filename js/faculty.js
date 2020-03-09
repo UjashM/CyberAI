@@ -96,7 +96,7 @@ if(false || !!document.documentMode)
                         let institution = (faculty.facultyType == 'researcher')? faculty.department : fulldepartment;
                         departmentFacultyContent = departmentFacultyContent +  '<div class = "search-container faculty-info"><img class = "faculty-image" src = "'+ faculty.photo+'"/> <h2 class = "content-header-no-margin">' +
                         '<a class = "no-link-decoration" href = ' + faculty.facultyLink + '>' + faculty.fullName + '</a></h2><h5 class = "content-header faculty-title">'+ faculty.title + ',<br>'+
-                        institution + '</h5><p class = "faculty-description"><strong>Email: </strong> <a class = "no-link-decoration" href = mailto:' + faculty.email + 
+                        institution + '</h5><p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + faculty.email + 
                         '>'+ faculty.email+ '</a><br><strong>Phone: </strong>'+ faculty.contact + '<br><strong>Research Interests: </strong>'+ faculty.researchInterest + '</p></div>'; 
                     });
 
