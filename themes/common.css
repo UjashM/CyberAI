@@ -97,12 +97,17 @@ Primary use:    Common.css file used for styling header, footer and
 
 .learn-more-text {
     text-decoration: underline;
+    color: #46166b;
+}
+
+.email-link{
+    color: cornflowerblue;
+    text-decoration: underline;
 }
 
 .no-link-decoration {
+    color: #46166b;
     text-decoration: none;
-    color: inherit;
-    font-weight: bold;
 }
 
 .no-link-decoration:hover{
