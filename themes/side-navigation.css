@@ -53,6 +53,8 @@ Primary use:    side-navigation.css file used for styling components
     font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
     font-size: 20px;
     padding-bottom: 30px;
+    position: sticky;
+    top: 165px;
 }
 
 #sub-navigation-bar {
