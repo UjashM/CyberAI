@@ -72,8 +72,6 @@ Primary use:    Common.css file used for styling header, footer and
 
 .content-wrapper {
     background: url('../assets/images/bkg-gray-pattern-tile.png');
-    position: relative;
-    top: 90px;
 }
 
 .display-flex {
@@ -89,8 +87,6 @@ Primary use:    Common.css file used for styling header, footer and
 
 .landing-page-image-wrapper {
     background-size: contain;
-    position: relative;
-    top: 90px;
     height: 70%;
     width: 100%;
 }
@@ -125,7 +121,8 @@ Primary use:    Common.css file used for styling header, footer and
 #navbar-header {
     background-color: #46166b;
     height: 90px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 2;
 }
@@ -224,7 +221,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {   
-        top: 47%;
+        top: 27%;
         width: 55%;
     }
     #landing-page-text-wrapper>h1
@@ -288,7 +285,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {
-        top: 48%;
+        top: 42%;
         width: 61%;
     }
     #landing-page-text-wrapper>h1
@@ -299,7 +296,7 @@ Primary use:    Common.css file used for styling header, footer and
     {
         display: none;
     }
-    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div,section {
+    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div, section {
         padding-left: 50px;
     }
     .main-content>ul, .main-content>ol {
@@ -347,7 +344,7 @@ Primary use:    Common.css file used for styling header, footer and
     }
     #landing-page-text-wrapper
     {
-        top: 38%;
+        top: 33%;
         width: 62%;
     }
     #landing-page-text-wrapper>h1

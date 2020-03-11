@@ -39,8 +39,6 @@ address>a:hover {
 
 #footer {
     background: #333333 url('../assets/images/mapimg_left.jpg') no-repeat left top;
-    position: relative;
-    top: 90px;
     padding: 20px;
     min-height: 360px;
 }

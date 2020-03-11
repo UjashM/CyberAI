@@ -18,7 +18,8 @@ Primary use:    side-navigation.css file used for styling components
 
 .welcome-images{
     float: right;
-    padding-right: 30px;
+    padding-right: 10px;
+    padding-left: 0px;
 }
 
 .welcome-images> img{
@@ -29,7 +30,6 @@ Primary use:    side-navigation.css file used for styling components
 {
     .welcome-images{
         float: left;
-        padding-right: 30px;
         padding-left: 0px;
     }
     .welcome-images> img{
