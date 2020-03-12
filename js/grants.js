@@ -1,14 +1,17 @@
 let requestURL = "data/grants.json";
 let request = new XMLHttpRequest();
+//getting content Element to append grants information
 let maincontentContainer = document.getElementsByClassName('main-content')[0];
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 request.onload = function(){
     const grants = request.response;  
+    //condition for checking if browser is Internet Explorer
     let grant =  ((false || !!document.documentMode))? JSON.parse(grants): grants;
     
     let content = '';
+    //Iterating over grants array to generate grant content
     for(let i = 0; i < grant.length; i++)
     {
         let imageElement = (grant[i].image == '')? '' : '<img class = "agency-logo" src = "'+ grant[i].image +'" />';
@@ -25,7 +28,8 @@ request.onload = function(){
                             '<br></div></div>' +
                    '<p class = "opp-description">' + grant[i].description + '</p>' +
                    '<button type = "button" class = "details-button" onclick = "location.href = \'' + grant[i].link + '\'">View Details</button></div>';
-    }  
+    }
+    //Appending grants to main content Element  
     let contentElement = document.createElement('div');
     contentElement.innerHTML = content.trim();
     maincontentContainer.appendChild(contentElement);

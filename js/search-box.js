@@ -1,4 +1,4 @@
-//getting search-box
+//getting search-box Element
 let searchbox = document.getElementById('search-box');
 let searchbutton = document.getElementById('search-button');
 
@@ -28,14 +28,21 @@ searchfunction = function()
 	let searchtext = searchbox.value.trim();
     let modifiedsearchtext = searchtext.replace(/\s+/g, '').toLowerCase();
     let searchElems = document.getElementsByClassName('search-container');
+
+    //If search keyword length is greater than zero ie. User has typed something
     if(searchbox.value.length > 0)
     {
-	    let matchcount = 0;
+        //Storing total number of matches
+        let matchcount = 0;
+        //Iterating through each content and validating if keyword is substring or not
 	    for(let i = 0; i< searchElems.length; i++)
         {
             if(searchElems[i].textContent.replace(/\s+/g, '').toLowerCase().indexOf(modifiedsearchtext) >= 0)
             {
+                //toggling display to block to show content
                 searchElems[i].style.display = "block";
+                //logic for search-box when accordion/sub-accordions are present to group content
+                //Toggles visibility if the content within accordion/subaccordion contains substring
                 if(cardElems.length >0)
                 {
                     searchElems[i].parentElement.style.display = "block";
@@ -47,6 +54,7 @@ searchfunction = function()
                     subaccordionElem.parentElement.parentElement.parentElement.style.display = "block";
                 }
                 matchcount = matchcount + 1;
+                //Updating search results
             }
             else
             {

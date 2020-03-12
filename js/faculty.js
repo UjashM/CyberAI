@@ -53,12 +53,14 @@ if(false || !!document.documentMode)
                 return a.indexOf(v) === i;
              });
             
+            //Logic for sorting and replacing Research Centers at last
             distinctSchools.sort();
             let rindex = distinctSchools.indexOf('Research Centers');
             let rlength = distinctSchools.length - 1;
             let swap = distinctSchools[rindex];
             distinctSchools[rindex] = distinctSchools[rlength];
             distinctSchools[rlength] = swap;
+
             //Iterating over list of schools
             distinctSchools.forEach(function(school){
 
