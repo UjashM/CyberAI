@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="https://www.albany.edu/sites/default/files/favicon_0.ico"
         type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="themes/bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="themes/bootstrap/css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="themes/bootstrap/css/bootstrap.min.css" />
@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="themes/side-navigation.css" />
     <link rel="stylesheet" href="themes/custom-fonts.css" />
     <link rel="stylesheet" href="themes/footer.css" />
-    <link rel="stylesheet" href= "themes/course-offerings.css" />
-    <link rel="stylesheet" href= "themes/accordion.css" />
+    <link rel="stylesheet" href="themes/funding-opportunity.css" />
+    <script src= "libraries/jquery/jquery-3.3.1.slim.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" async></script>
+    <script src="libraries/bootstrap/js/bootstrap.min.js" async></script>
     <title>
-        Course Offerings | University at Albany
+        Funding Opportunities | University at Albany
     </title>
 </head>
 
@@ -47,43 +49,45 @@
                     <li class="navigation-items hover-highlight"><a href="welcome.html">WELCOME</a></li>
                     <li class="navigation-items hover-highlight"><a href="faculty-and-researchers.html">FACULTY AND RESEARCHERS</a></li>
                     <li class="navigation-items hover-highlight"><a href="departments-and-labs.html">COLLEGES, SCHOOLS, AND CENTERS</a></li>
-                    <li class="navigation-items hover-highlight"><a href="funding-opportunities.html">FUNDING OPPORTUNITIES</a></li>
-                    <li id="expanded-navigation-item"><a href="academic-programs.html">ACADEMIC PROGRAMS &amp; COURSE OFFERINGS</a>
-                        <ul id="sub-navigation-bar">
-                            <li class="first-sub-navigation-item hover-highlight"><a
-                                    href="academic-programs.html">Academic Programs</a></li>
-                            <li class="last-sub-navigation-item hover-highlight" id="active-page"><a href="course-offerings.html">Course Offerings</a></li>
-                        </ul>
-                    </li>
-                    <li class="navigation-items hover-highlight"><a href="special-designations.html">SPECIAL DESIGNATIONS</a></li>
+                    <li class="navigation-items hover-highlight" id = "active-page"><a href="funding-opportunities.html">FUNDING OPPORTUNITIES</a></li>
+                    <li class="navigation-items hover-highlight"><a href="academic-programs.html">ACADEMIC PROGRAMS &amp; COURSE OFFERINGS</a></li>
+                    <li class="navigation-items hover-highlight" ><a href="special-designations.html">SPECIAL DESIGNATIONS</a></li>
                     <li class="navigation-items hover-highlight"><a href="lightning-talks.html">LIGHTNING TALKS</a></li>
                     <li class="navigation-items hover-highlight"><a href="aicsi-seed-funding.html">AICSI SEED
                             FUNDING</a></li>
                 </ul>
             </div>
             <div class="main-content col-sm-12 col-md-7 col-lg-8 col-xl-9">
-                <h1 class = "content-header">
-                    Course Offerings
+                <h1 class="content-header">
+                    Funding Opportunities
                 </h1>
-                <input id = "search-box" placeholder = "Search for courses.."><button id = "search-button" type = "submit"><i class="fa fa-search"></i></button>
-                <br><span id = "search-box-results">
-                    </span>
-                <!--template id= "course-template">
-                 <div class = "course-container">   
-                    <strong><span class = "course-code"></span> &nbsp; &nbsp;<span class = "course-title"></span>
-                    <span class = "credits"></span></strong>
-                    <span class = "credits"></span>
-                    <br>
-                    <span><strong>Department: </strong></span><span class = "department"></span>
-                    <br>
-                    <span><strong>School: </strong></span><span class = "school"></span>
-                    <br>
-                    <span><strong>Degree: </strong></span><span class = "degree"></span>
-                    <br>
-                    <p class= "description"></p>
-                 </div>
-                </template-->
+                <input id = "search-box" placeholder = "Search for Opportunities.."><button id = "search-button" type = "submit"><i class="fa fa-search"></i></button>
+                <br>
+                <span id = "search-box-results">
+                </span>
+                <!--div class = "opportunity-container search-container">
+                   <h4 class = "black-content-header-less-margin">Scientific Discovery through Advanced Computing: Scientific Machine Learning and Artificial Intelligence for Fusion Energy Sciences</h4>
+                   <div class = "display-flex">
+                        <div class = "col-md-12 col-lg-6 col-xl-6">
+                            <i class="fas fa-flag"></i> <strong>Agency Name: </strong>Office of Science
+                            <br>
+                            <i class="fas fa-dollar-sign"></i> <strong>Estimated Funding: </strong>21000000
+                            <br>
+                        </div>
+                        <div class = "col-md-12 col-lg-6 col-xl-6">
+                            <i class="fas fa-calendar-day"></i> <strong>Posted Date: </strong>3/4/2020
+                            <br>
+                            <i class="fas fa-calendar-day"></i> <strong>Close Date: </strong>4/30/2020
+                            <br>
+                        </div>
+                   </div>
+                   <p>
+                    The DOE SC programs in Fusion Energy Sciences (FES) and Advanced Scientific Computing Research (ASCR) invite applications under the Scientific Discovery through Advanced Computing (SciDAC) program in the area of Scientific Machine Learning and Artificial 
+                   </p>
+                   <button type = "button" class = "details-button" onclick = "location.href = 'https://www.grants.gov/view-opportunity.html?oppId=325051'">View Details</button>
+                </div-->
             </div>
+        </div>
         </div>
     </section>
     <footer id="footer">
@@ -151,12 +155,8 @@
             <p>© 2019&nbsp;University at Albany</p>
         </section>
     </footer>
-    <script src = "js/course-generator.js"></script>
     <script src = "js/search-box.js"></script>
-    <script src= "libraries/jquery/jquery-3.3.1.slim.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
-    <script src = "js/accordion.js" ></script>
+    <script src = "js/grants.js"></script>
 </body>
 
 </html>

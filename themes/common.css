@@ -50,6 +50,11 @@ Primary use:    Common.css file used for styling header, footer and
     margin-bottom: 20px;
 }
 
+.black-content-header-no-margin {
+    color: #555;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+}
+
 .grey-content-header-less-margin {
     color: #777;
     font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
@@ -236,7 +241,7 @@ Primary use:    Common.css file used for styling header, footer and
         padding-top: 20px;
     }
     .main-content>ul, .main-content>ol {
-        padding-left: 20px;
+        margin-left: 20px;
     }
     .main-content> #search-box{       
         margin-bottom: 5px;
@@ -266,7 +271,7 @@ Primary use:    Common.css file used for styling header, footer and
         display: none;
     }
     .main-content>ul, .main-content>ol {
-        padding-left: 20px;
+        margin-left: 20px;
     }
     .main-content> #search-box{       
         margin-bottom: 5px;
@@ -296,11 +301,14 @@ Primary use:    Common.css file used for styling header, footer and
     {
         display: none;
     }
-    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div, section {
+    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
+        margin-left: 50px;
+    }
+    section{
         padding-left: 50px;
     }
     .main-content>ul, .main-content>ol {
-        padding-left: 90px;
+        margin-left: 90px;
     }
     .main-content> #search-box{       
         margin: 0px 0px 5px 50px;

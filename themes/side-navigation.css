@@ -54,7 +54,7 @@ Primary use:    side-navigation.css file used for styling components
     font-size: 20px;
     padding-bottom: 30px;
     position: sticky;
-    top: 165px;
+    top: 105px;
 }
 
 #sub-navigation-bar {

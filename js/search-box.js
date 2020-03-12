@@ -11,16 +11,18 @@ let accordionContent = document.getElementsByClassName('accordion-content');
 searchfunction = function()
 {   
     //Setting display to none for all accordion and sub-accordionElems
-    for(let i = 0; i< accordionContainers.length; i++)
+    if(cardElems.length >0)
     {
-        accordionContainers[i].style.display = "none";
-    }
+        for(let i = 0; i< accordionContainers.length; i++)
+        {
+            accordionContainers[i].style.display = "none";
+        }
     
-    for(let i = 0; i< cardElems.length; i++)
-    {
-        cardElems[i].style.display = "none";
+        for(let i = 0; i< cardElems.length; i++)
+        {
+            cardElems[i].style.display = "none";
+        }
     }
-
 
     //extracting search-text and trimming text to ignore additional-spaces
 	let searchtext = searchbox.value.trim();
@@ -34,13 +36,16 @@ searchfunction = function()
             if(searchElems[i].textContent.replace(/\s+/g, '').toLowerCase().indexOf(modifiedsearchtext) >= 0)
             {
                 searchElems[i].style.display = "block";
-                searchElems[i].parentElement.style.display = "block";
-                // Accessing accordion-container class containeing content of sub-accordion
-                subaccordionElem = searchElems[i].parentElement.parentElement;
-                subaccordionElem.style.display = "block";
-                //Adding class show if main-accordion is in collapsed mode
-                subaccordionElem.parentElement.parentElement.classList.add('show');
-                subaccordionElem.parentElement.parentElement.parentElement.style.display = "block";
+                if(cardElems.length >0)
+                {
+                    searchElems[i].parentElement.style.display = "block";
+                    // Accessing accordion-container class containeing content of sub-accordion
+                    subaccordionElem = searchElems[i].parentElement.parentElement;
+                    subaccordionElem.style.display = "block";
+                    //Adding class show if main-accordion is in collapsed mode
+                    subaccordionElem.parentElement.parentElement.classList.add('show');
+                    subaccordionElem.parentElement.parentElement.parentElement.style.display = "block";
+                }
                 matchcount = matchcount + 1;
             }
             else
@@ -54,26 +59,29 @@ searchfunction = function()
     else{
             document.getElementById('search-box-results').innerText = '';
             //When user clears search, toggling state of each subAccordionElems
-            for(let i = 0; i< accordionContainers.length; i++)
+            if(cardElems.length > 0)
             {
-                accordionContainers[i].style.display = "block";
-                accordionContainers[i].parentElement.parentElement.classList.remove('show');
+                for(let i = 0; i< accordionContainers.length; i++)
+                {
+                    accordionContainers[i].style.display = "block";
+                    accordionContainers[i].parentElement.parentElement.classList.remove('show');
+                }
+                //When user clears search, toggling state of each AccordionElems
+                for(let i = 0; i< cardElems.length; i++)
+                {
+                    cardElems[i].style.display = "block";
+                }
+                //When user clears search, toggling state of each individual group content
+                for(let i = 0; i< accordionContent.length; i++)
+                {
+                    accordionContent[i].style.display = "none";
+                }
             }
-            //When user clears search, toggling state of each AccordionElems
-            for(let i = 0; i< cardElems.length; i++)
-            {
-                cardElems[i].style.display = "block";
-            }
-            //When user clears search, toggling state of each individual group content
-            for(let i = 0; i< accordionContent.length; i++)
-            {
-                accordionContent[i].style.display = "none";
-            }
-            //When user clears search, toggling state of each individual content
-            for(let i = 0; i< searchElems.length; i++)
-            {
-                searchElems[i].style.display = "block";
-            }
+             //When user clears search, toggling state of each individual content
+             for(let i = 0; i< searchElems.length; i++)
+             {
+                 searchElems[i].style.display = "block";
+             }
         }
 }
 searchbox.onkeyup = searchfunction;
