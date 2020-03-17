@@ -4,6 +4,10 @@
 Primary use:    departments-and-labs.css file used for styling department 
                 and labs page
 -------------------------------------------------------------------*/
+.content-header-department{
+    color: #46166C;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+}
 
 .right-logo{  
     float: right;
