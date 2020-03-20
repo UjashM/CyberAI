@@ -1,4 +1,4 @@
-window.onload = function(){
+
 //getting accordion-headers to add click event
 let mainContent = document.getElementsByClassName('main-content')[0];
 mainContent.addEventListener('click', function(e){
@@ -23,7 +23,7 @@ mainContent.addEventListener('click', function(e){
         }
     }
  })
-}
+
 
 /*let hideshowfunction = function(){  
     //logic for checking display of content
