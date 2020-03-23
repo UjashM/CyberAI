@@ -48,64 +48,35 @@ if(false || !!document.documentMode)
             //Department-counter for unique id generation
             let deptcounter = 1;
             //finding list of distinct departments
-            courseDepartments = courses.map(function(course){ 
-                return course.department});
-            distinctDepartments = courseDepartments.filter(function(v, i, a){
-                return a.indexOf(v) === i;
-             });
-            
-            distinctDepartments.sort();
+            let distinctDepartments = getDistinctAttributes(courses, "department");
+
             //Iterating over list of departments
             distinctDepartments.forEach(function(department){
 
-                departmentCourses = courses.filter(function(course){ 	
+                let departmentCourses = courses.filter(function(course){ 	
                     return course.department == department
                 });
                 //getting list of distint degrees within department
-                departmentDegrees = departmentCourses.map(function(course){ 
-                    return course.degree});
+                let degrees = getDistinctAttributes(departmentCourses, "degree");
+                let accordionContent = generateSubAccordionContent(degrees, "degree", departmentCourses, generateDegreeContent);
                 
-                degrees = departmentDegrees.filter(function(v, i, a){
-                        return a.indexOf(v) === i;  
-                });
-                degrees.sort();
-                let accordioncontent = '';
-                //iterating over list of degrees to generate sub-accordion
-                degrees.forEach(function(degree){
-                    //finding list of courses relevant to degree and department
-                    degreeCourses = departmentCourses.filter(function(course){ 	
-                        return course.degree == degree
-                    });
-
-                    let degreeCoursecontent = '';
-                    //Generating course-content for specific degree
-                    degreeCourses.forEach(function(course){
-                        degreeCoursecontent = degreeCoursecontent +  '<div class = "search-container course-container"><strong><span class = "course-code">' + course.courseCode + '</span> &nbsp; &nbsp;<span class = "course-title">' + course.title + '</span>'+
-                        '<span class = "credits">'+ course.courseCredits + '</span></strong>' +
-                        '<br><span><strong>Department: </strong></span><span class = "department">' + course.department + '</span><br><span><strong>School: </strong></span><span class = "school">'
-                        + course.school + '</span><br><span><strong>Degree: </strong></span><span class = "degree">' + course.degree + '</span><br><p class= "description">' + course.description
-                        +'</p></div>'; 
-                    });
-
-                    accordioncontent += '<div class = "accordion-container"><div class = "accordion-header"><h3 class = "content-header-no-margin">'+ degree + '</h3></div><div class = "accordion-content">'+ degreeCoursecontent +'</div></div>';
-                });
-
                 //generating Id for bootstrap accordion
                 let deptId = "collapse" + deptcounter;
                 let headingId = "heading" + deptcounter;
-                let accordionElem =  '<div class = "card"><div class="card-header" id="'+ headingId + '">' +
-                          '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#'+ deptId + '" aria-expanded="true" aria-controls="' + deptId + '">'+
-                            '<h2 class = "content-header-no-margin">' + department + '</h2></button></div>'
-                        + '<div id="'+ deptId + '" class = "collapse" aria-labelledby= "'+ headingId + '"> <div class = "card-body">'
-                        + accordioncontent +'</div></div></div>';  
+                let accordionElem =  generateAccordionElem(deptId, headingId, department, accordionContent);
                 content = content + accordionElem;
                 deptcounter++;
             });
             //Appending content to DOM
-            let accordionElement = document.createElement('div');
-            accordionElement.classList.add('accordion');
-            accordionElement.id = 'accordionExample';
-            accordionElement.innerHTML = content.trim();
-            maincontentContainer.appendChild(accordionElement);
+            appendMainContent(maincontentContainer, content);
         }
+    }
+
+    let generateDegreeContent = function(course){
+        let degreeContent =  '<div class = "search-container course-container"><strong><span class = "course-code">' + course.courseCode + '</span> &nbsp; &nbsp;<span class = "course-title">' + course.title + '</span>'+
+        '<span class = "credits">'+ course.courseCredits + '</span></strong>' +
+        '<br><span><strong>Department: </strong></span><span class = "department">' + course.department + '</span><br><span><strong>School: </strong></span><span class = "school">'
+        + course.school + '</span><br><span><strong>Degree: </strong></span><span class = "degree">' + course.degree + '</span><br><p class= "description">' + course.description
+        +'</p></div>'; 
+        return degreeContent;
     }
