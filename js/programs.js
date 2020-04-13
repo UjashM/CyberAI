@@ -31,7 +31,7 @@ request.onload = function(){
             degreeDetails = programTypeDegrees.filter(function(programTypeDegree){ 	
                 return programTypeDegree.degree == degree;
             });
-            accordioncontent = generateProgramContent(degreeDetails); 
+            accordioncontent = accordioncontent + generateProgramContent(degreeDetails); 
         });
         //generating Id for bootstrap accordion
         let programTypeId = "collapse" + programTypecounter;
@@ -46,15 +46,19 @@ request.onload = function(){
 
     //generate HTML content for each Academic Program
     let generateProgramContent = function(degreeDetails){
-        let departmentElement = (degreeDetails[0].department != 'N/A')? '<strong>Department: </strong>' + degreeDetails[0].department : '';
-        let degreeRequirementElem = (degreeDetails[0].description != 'N/A')? '<h4 class = "content-header-no-margin">Degree Requirements</h4>'+
-        '<p>' + degreeDetails[0].description + '</p>' : '';
-        let programLink = (typeof degreeDetails[0].link != 'undefined')? '<br><strong>Program Link: </strong><a href = "' + degreeDetails[0].link +'">'+ degreeDetails[0].link +'</a>':'';
-        let degreeContent = '<p>'+ departmentElement + '<br><strong>School: </strong>' + degreeDetails[0].college + 
-         '<br><strong>Credits Hours: </strong>' + degreeDetails[0].credits +  programLink +'</p>'+      
-        '<h4 class = "content-header-no-margin">Core Courses </h4>'+
-                 degreeDetails[0].coreCourses +
-                    degreeRequirementElem;
-        let content = '<div class = "accordion-container"><div class = "accordion-header"><h3 class = "content-header-no-margin">'+ degreeDetails[0].degree + '</h3></div><div class = "accordion-content">'+ degreeContent +'</div></div>';
-        return content;
+        let content = '';
+        degreeDetails.forEach(function(degree){
+            let departmentElement = (degree.department != 'N/A')? '<strong>Department: </strong>' + degree.department : '';
+            let degreeRequirementElem = (degree.description != 'N/A')? '<h4 class = "content-header-no-margin">Degree Requirements</h4>'+
+            '<p>' + degree.description + '</p>' : '';
+            let programLink = (typeof degree.link != 'undefined')? '<br><strong>Program Link: </strong><a href = "' + degree.link +'">'+ degree.link +'</a>':'';
+            let degreeContent = '<p>'+ departmentElement + '<br><strong>School: </strong>' + degree.college + 
+             '<br><strong>Credits Hours: </strong>' + degree.credits +  programLink +'</p>'+      
+            '<h4 class = "content-header-no-margin">Core Courses </h4>'+
+                     degree.coreCourses +
+                        degreeRequirementElem;
+            content = content +  '<div class = "accordion-container"><div class = "accordion-header"><h3 class = "content-header-no-margin">'+ degree.degree + '</h3></div><div class = "accordion-content">'+ degreeContent +'</div></div>';
+            
+        });
+       return content;
     }
