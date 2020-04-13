@@ -18,13 +18,11 @@ Primary use:    side-navigation.css file used for styling components
 
 .welcome-images{
     float: right;
-    padding-right: 10px;
     padding-left: 0px;
-    display: flex;
 }
 
 .welcome-images> div{
-    margin-left: 20px;
+    margin: 0px 20px 10px 0px;
     height: 215px;
     width: 200px;
 }
