@@ -28,7 +28,7 @@ let courselist = request.response;
         //generating Id for bootstrap accordion
         let deptId = "collapse" + deptcounter;
         let headingId = "heading" + deptcounter;
-        let accordionElem =  generateAccordionElem(deptId, headingId, department, accordionContent);
+        let accordionElem =  generateAccordionElem(deptId, headingId, department, accordionContent, 'purple');
         content = content + accordionElem;
         deptcounter++;
     });

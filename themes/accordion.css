@@ -40,10 +40,6 @@ button.btn-link{
     text-align: left;
 }
 
-button.btn-link:hover, button.btn-link > .content-header-no-margin:hover{
-    color: inherit;
-}
-
 .card{
     background-color: transparent;
     border: 0px;
@@ -58,5 +54,15 @@ button.btn-link:hover, button.btn-link > .content-header-no-margin:hover{
 
 .card-header:hover{
     color: white;
-    background-color: #46166C;
+}
+
+button.gold-button-theme, button.gold-button-theme > .content-header-no-margin{
+    background-color: #eeb211;
+    color: white;
+}
+
+button.btn-link:hover, button.btn-link > .content-header-no-margin:hover,
+button.gold-button-theme:hover, button.gold-button-theme > .content-header-no-margin:hover 
+{
+    color: inherit;
 }

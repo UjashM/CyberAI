@@ -6,12 +6,17 @@ request.responseType = 'json';
 request.send();
 request.onload = function(){
     let programlist = request.response;  
+    let distinctprogramTypes = ['Bachelor',
+        'Combined BA-BS or BS-MS',
+        'Honors Program',
+        'Transfer-oriented Program',
+        'Masters',
+        'Doctorate',
+        'Graduate Certificate'];
     const programs =  ((false || !!document.documentMode))? JSON.parse(programlist): programlist;  
     let content = '';
     //programType-counter for unique id generation
     let programTypecounter = 1;
-    let distinctprogramTypes = getDistinctAttributes(programs, "programLevel");
-            
     //Iterating over list of programTypes
     distinctprogramTypes.forEach(function(programType){
         //filtering on programType
@@ -36,7 +41,7 @@ request.onload = function(){
         //generating Id for bootstrap accordion
         let programTypeId = "collapse" + programTypecounter;
         let headingId = "heading" + programTypecounter;
-        let accordionElem =   generateAccordionElem(programTypeId, headingId, programType, accordioncontent);
+        let accordionElem =   generateAccordionElem(programTypeId, headingId, programType, accordioncontent, programTypeDegrees[0].theme);
         content = content + accordionElem;
         programTypecounter++;
     });
