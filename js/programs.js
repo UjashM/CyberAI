@@ -41,7 +41,7 @@ request.onload = function(){
         //generating Id for bootstrap accordion
         let programTypeId = "collapse" + programTypecounter;
         let headingId = "heading" + programTypecounter;
-        let accordionElem =   generateAccordionElem(programTypeId, headingId, programType, accordioncontent, programTypeDegrees[0].theme);
+        let accordionElem =   generateAccordionElem(programTypeId, headingId, programType, accordioncontent, '');
         content = content + accordionElem;
         programTypecounter++;
     });
