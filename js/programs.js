@@ -6,19 +6,23 @@ request.responseType = 'json';
 request.send();
 request.onload = function(){
     let programlist = request.response;  
-    let distinctprogramTypes = ['Bachelor',
+    let programCategories = ['Undergraduate Programs', 'Graduate Programs']
+    let distinctprogramTypes = [['Bachelor',
         'Combined BA-BS or BS-MS',
         'Honors Program',
-        'Transfer-oriented Program',
-        'Masters',
+        'Transfer-oriented Program'],
+        ['Masters',
         'Doctorate',
-        'Graduate Certificate'];
+        'Graduate Certificate']];
     const programs =  ((false || !!document.documentMode))? JSON.parse(programlist): programlist;  
     let content = '';
     //programType-counter for unique id generation
     let programTypecounter = 1;
     //Iterating over list of programTypes
-    distinctprogramTypes.forEach(function(programType){
+    for(let i = 0; i< programCategories.length; i++)
+    {
+        content = content + '<h2 class = "content-header-top-bottom-margin">'+ programCategories[i]+'</h2>'
+        distinctprogramTypes[i].forEach(function(programType){
         //filtering on programType
         programTypeDegrees = programs.filter(function(program){ 	
             return program.programLevel == programType;
@@ -44,7 +48,8 @@ request.onload = function(){
         let accordionElem =   generateAccordionElem(programTypeId, headingId, programType, accordioncontent, '');
         content = content + accordionElem;
         programTypecounter++;
-    });
+        });
+    }
             //Appending content to DOM
         appendMainContent(maincontentContainer, content);
 }
