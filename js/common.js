@@ -34,7 +34,7 @@ let generateAccordionElem = function(divId, bootlabelId, accordionHeader, accord
     '<button class="btn btn-link gold-button-theme" type="button" data-toggle="collapse" data-target="#';
     let accordionElem =  '<div class = "card"><div class="card-header" id="'+ bootlabelId + '">' +
                           buttontheme + divId + '" aria-expanded="true" aria-controls="' + divId + '">'+
-                            '<h2 class = "content-header-no-margin">' + accordionHeader + '</h2></button></div>'
+                            '<h2 class = "content-header-no-margin">' + accordionHeader + '<i class="fas fa-chevron-down"></i></h2></button></div>'
                         + '<div id="'+ divId + '" class = "collapse" aria-labelledby= "'+ bootlabelId + '"> <div class = "card-body">'
                         + accordionContent +'</div></div></div>';  
     return accordionElem;

@@ -6,7 +6,7 @@ request.responseType = 'json';
 request.send();
 request.onload = function(){
     let programlist = request.response;  
-    let programCategories = ['Undergraduate Programs', 'Graduate Programs']
+    let programCategories = ['Undergraduate Programs', 'Graduate Programs'];
     let distinctprogramTypes = [['Bachelor',
         'Combined BA-BS or BS-MS',
         'Honors Program',
@@ -21,7 +21,7 @@ request.onload = function(){
     //Iterating over list of programTypes
     for(let i = 0; i< programCategories.length; i++)
     {
-        content = content + '<h2 class = "content-header-top-bottom-margin">'+ programCategories[i]+'</h2>'
+        //content = content + '<h2 class = "content-header-top-bottom-margin">'+ programCategories[i]+'</h2>'
         distinctprogramTypes[i].forEach(function(programType){
         //filtering on programType
         programTypeDegrees = programs.filter(function(program){ 	

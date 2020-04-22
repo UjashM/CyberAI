@@ -109,7 +109,7 @@ if(false || !!document.documentMode)
                 let headingId = "heading" + schoolcounter;
                 let accordionElem =  '<div class = "card"><div class="card-header" id="'+ headingId + '">' +
                           '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#'+ schoolId + '" aria-expanded="true" aria-controls="' + schoolId + '">'+
-                            '<h2 class = "content-header-no-margin">' + school + '</h2></button></div>'
+                            '<h2 class = "content-header-no-margin">' + school + '<i class="fas fa-chevron-down"></i></h2></button></div>'
                         + '<div id="'+ schoolId + '" class = "collapse" aria-labelledby= "'+ headingId + '"data-parent=""> <div class = "card-body">'
                         + accordioncontent +'</div></div></div>';  
                 content = content + accordionElem;
